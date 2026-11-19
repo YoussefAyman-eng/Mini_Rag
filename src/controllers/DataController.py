@@ -7,7 +7,7 @@ class DataController(BaseController):
         super().__init__()
 
 
-    def validate_file(self, file, app_settings):
+    def validate_file(self, file: UploadFile, app_settings):
        if file.content_type not in app_settings.file_allowed_extensions:
             return False, f"File type {file.content_type} is not allowed."
 
